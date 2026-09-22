@@ -1,7 +1,7 @@
 /* LE 2 mobile dashboard — service worker.
    Caches the app shell so the installed app opens offline. Bump CACHE when a new
    mNNN build is published; old caches are removed on activate. */
-var CACHE = 'le2m-m6';
+var CACHE = 'le2m-m10';
 var SHELL = ['./', './index.html', './manifest.webmanifest', './icon-180.png', './icon-192.png', './icon-512.png', './icon-512-maskable.png'];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(SHELL); }).then(function () { return self.skipWaiting(); }));
